@@ -1,0 +1,32 @@
+.main__resume-buttons {
+    /* background-color: purple; */
+    gap: .3125rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+
+}
+
+.main__button {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem .875rem;
+    gap: .625rem;
+
+    width: 4.375rem;
+    height: 2rem;
+
+    background: var(--fixed-white);
+
+    border: .0938rem solid #6741D9;
+    border-radius: .5rem;
+}
+
+.main__button:focus {
+    background-color: var(--color-brand-3)
+}
