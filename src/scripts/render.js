@@ -1,3 +1,5 @@
+import {insertedValues} from "./valuesData.js"
+
 export const render = (array) => {
     const mainList = document.querySelector(".mainList")
 
@@ -10,8 +12,29 @@ export const render = (array) => {
 
 
     });
-
+    handleDeleteInsertedValue(insertedValues)
 }
+
+
+
+const handleDeleteInsertedValue = (array) => {
+    const buttons = document.querySelectorAll(".button__delete") 
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            //para saber qual botão está sendo clicado, entra o event
+            const insertedValueID = event.target.dataset.insertedValueID
+            
+            const findInsertedValueIndex = array.findIndex(insertedValue => insertedValue.id === Number(insertedValueID))
+            
+            const removedItem = array.splice(findInsertedValueIndex, 1)
+            //tira do array original
+            // console.log(removedItem)
+            // console.log(array)
+            render(array)
+           
+        })
+    })
+}   
 
 const createCard = (insertedValue) => {
     const card = document.createElement("li")
@@ -24,7 +47,7 @@ const createCard = (insertedValue) => {
     categoryID.classList.add("card__categoryID")
     card.classList.add('list__card')
     divCard.classList.add("div__card")
-    deleteBtn.classList.add(".button__delete")
+    deleteBtn.classList.add("button__delete")
 
     if (insertedValue.categoryID == 0) {
         categoryID.innerText = "Entrada"
@@ -34,6 +57,7 @@ const createCard = (insertedValue) => {
 
     value.innerText = `R$ ${insertedValue.value.toFixed(2)}`
     deleteBtn.src = "./src/assets/trash.svg"
+    deleteBtn.dataset.insertedValueID = insertedValue.id
 
     divCard.append(categoryID, deleteBtn)
     card.append(value, divCard)

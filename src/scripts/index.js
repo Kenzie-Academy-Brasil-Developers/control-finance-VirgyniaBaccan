@@ -5,11 +5,3 @@ render(insertedValues)
 
 
 
-
-const handleDeleteInsertedValue = (array) => {
-    const buttons = document.querySelectorAll(".button__delete") 
-    console.log(buttons)
-}   
-
-
-handleDeleteInsertedValue(insertedValues)
