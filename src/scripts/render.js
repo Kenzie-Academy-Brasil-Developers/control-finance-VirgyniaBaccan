@@ -1,4 +1,4 @@
-import {insertedValues} from "./valuesData.js"
+import { insertedValues } from "./valuesData.js"
 
 export const render = (array) => {
     const mainList = document.querySelector(".mainList")
@@ -10,31 +10,40 @@ export const render = (array) => {
 
         mainList.appendChild(card)
 
-
     });
     handleDeleteInsertedValue(insertedValues)
+    sum(array)
 }
 
 
-
 const handleDeleteInsertedValue = (array) => {
-    const buttons = document.querySelectorAll(".button__delete") 
+    const buttons = document.querySelectorAll(".button__delete")
     buttons.forEach(button => {
         button.addEventListener('click', (event) => {
-            //para saber qual botão está sendo clicado, entra o event
+
             const insertedValueID = event.target.dataset.insertedValueID
-            
+
             const findInsertedValueIndex = array.findIndex(insertedValue => insertedValue.id === Number(insertedValueID))
-            
+
             const removedItem = array.splice(findInsertedValueIndex, 1)
-            //tira do array original
-            // console.log(removedItem)
-            // console.log(array)
+
             render(array)
-           
+            sum(array)
         })
     })
-}   
+}
+
+export const sum = (array) => {
+
+    const valuesSum = document.querySelector(".values__sum")
+
+    const totalSum = array.reduce((acc, currentValue) => {
+        return acc += currentValue.value
+    }, 0)
+
+    valuesSum.innerText = `R$ ${totalSum.toFixed(2)}`
+
+}
 
 const createCard = (insertedValue) => {
     const card = document.createElement("li")
@@ -85,9 +94,7 @@ export function filterButtons() {
 
 }
 
-filterButtons()
-
-const handleModal = () => {
+export const handleModal = () => {
     const modal = document.querySelector(".modal__controller")
     const navButton = document.querySelector(".nav__button")
 
@@ -97,8 +104,6 @@ const handleModal = () => {
         closeModal()
     })
 }
-
-handleModal()
 
 function closeModal() {
 

@@ -1,4 +1,3 @@
-// const valuesCategory = ["Entrada", "Saída"];
 
 export let insertedValues = [
   {
