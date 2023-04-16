@@ -25,6 +25,9 @@
   --font-size-3: 0.875rem;
   --font-size-4: 0.75rem;
 
+  --animation-duration: 0.2s;
+  --animation-type: ease;
+
   --font-family-1: "Inter", sans-serif;
   --font-family-2: "Nunito", sans-serif;
 }

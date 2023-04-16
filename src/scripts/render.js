@@ -36,13 +36,13 @@ const handleDeleteInsertedValue = (array) => {
 export const sum = (array) => {
 
     const valuesSum = document.querySelector(".values__sum")
+    
 
     const totalSum = array.reduce((acc, currentValue) => {
         return acc += currentValue.value
     }, 0)
 
     valuesSum.innerText = `R$ ${totalSum.toFixed(2)}`
-
 }
 
 const createCard = (insertedValue) => {

@@ -27,6 +27,7 @@
     font-size: var(--font-size-3);
     line-height: 1.0625rem;
     cursor: pointer;
+    transition: all 0.2s ease;
 
 }
 
@@ -40,6 +41,7 @@
     background-color: var(--color-brand-3);
     color: var(--color-brand-1);
     border: 0.1rem solid var(--color-brand-1);
+    transition: all 0.2s ease;
 }
 
 .button__delete {
@@ -56,10 +58,11 @@
     width: 1.7656rem;
     height: 1.625rem;
 
-    background: #FFFFFF;
+    background: var(--fixed-white);
   
-    border: .0938rem solid #F1F3F5;
+    border: .0938rem solid var(--fixed-white);
     border-radius: .25rem;
+    transition: all 0.2s ease;
 }
 
 .button__delete:hover {

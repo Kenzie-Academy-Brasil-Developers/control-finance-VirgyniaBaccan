@@ -21,6 +21,10 @@
     border: .125rem solid transparent;
 }
 
+.modal__container::backdrop {
+    background-color: var(  --color-grey-1-opacity-5);
+}
+
 .modal__title {
     width: 8.1875rem;
     height: 1.1875rem;

@@ -39,6 +39,7 @@
     height: 1.875rem;
     width: 90%;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .nav__button:hover {
