@@ -5,12 +5,19 @@ export const render = (array) => {
 
     mainList.innerHTML = ''
 
+    if(insertedValues.length > 0) {
+
     array.forEach((insertedValue) => {
         const card = createCard(insertedValue)
 
-        mainList.appendChild(card)
+        mainList.appendChild(card) 
 
-    });
+    }); 
+    } else { 
+        const cardEmpty = createEmptyCard()
+        mainList.appendChild(cardEmpty)
+    }
+
     handleDeleteInsertedValue(insertedValues)
     sum(array)
 }
@@ -43,6 +50,31 @@ export const sum = (array) => {
     }, 0)
 
     valuesSum.innerText = `R$ ${totalSum.toFixed(2)}`
+}
+
+const createEmptyCard = () => {
+    const cardEmpty = document.createElement("li")
+    const title = document.createElement("h2")
+    const text = document.createElement("p")
+
+    cardEmpty.classList.add("card__empty")
+    title.classList.add("title__empty")
+    text.classList.add("text__empty")
+
+    title.innerText = "Nenhum valor cadastrado"
+    text.innerText = "Registrar novo valor"
+
+    cardEmpty.append(title, text)
+
+    cardEmpty.addEventListener('click', () => {
+        const modal = document.querySelector(".modal__controller")
+        modal.showModal()
+    
+        closeModal()
+    })
+
+    return cardEmpty
+
 }
 
 const createCard = (insertedValue) => {

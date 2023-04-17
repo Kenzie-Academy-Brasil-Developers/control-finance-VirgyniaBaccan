@@ -59,7 +59,7 @@
     height: 1.625rem;
 
     background: var(--fixed-white);
-  
+
     border: .0938rem solid var(--fixed-white);
     border-radius: .25rem;
     transition: all 0.2s ease;
@@ -67,4 +67,46 @@
 
 .button__delete:hover {
     border: .125rem solid var(--color-grey-3);
+}
+
+.card__empty {
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 14px 244px;
+    gap: 16px;
+
+    background:var(--color-grey-5);
+
+
+    border: 1.5px dashed var(--color-grey-3);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.title__empty {
+    width: 200px;
+    height: 19px;
+
+    font-style: normal;
+    font-weight: 600;
+    font-size: var(--font-size-2);
+    line-height: 19px;
+
+    color: var(--color-grey-1);
+}
+
+.text__empty {
+
+    width: 134px;
+    height: 17px;
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: var(--font-size-3);
+    line-height: 17px;
+ 
+    color: var(--color-grey-2);
 }
