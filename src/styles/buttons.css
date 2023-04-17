@@ -75,38 +75,39 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 14px 244px;
-    gap: 16px;
+    padding: .875rem 2.25rem;
+    gap: 1rem;
+    width: 100%;
 
     background:var(--color-grey-5);
 
 
-    border: 1.5px dashed var(--color-grey-3);
-    border-radius: 8px;
+    border: .0938rem dashed var(--color-grey-3);
+    border-radius: .5rem;
     cursor: pointer;
 }
 
 .title__empty {
-    width: 200px;
-    height: 19px;
+    width: 12.5rem;
+    height: 1.1875rem;
 
     font-style: normal;
     font-weight: 600;
     font-size: var(--font-size-2);
-    line-height: 19px;
+    line-height: 1.1875rem;
 
     color: var(--color-grey-1);
 }
 
 .text__empty {
 
-    width: 134px;
-    height: 17px;
+    width: 8.375rem;
+    height: 1.0625rem;
 
     font-style: normal;
     font-weight: 500;
     font-size: var(--font-size-3);
-    line-height: 17px;
+    line-height: 1.0625rem;
  
     color: var(--color-grey-2);
 }
