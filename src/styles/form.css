@@ -10,6 +10,8 @@
 }
 
 .modal__container {
+    
+    
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -19,11 +21,21 @@
     gap: .625rem;
     background: var(--fixed-white);
     border: .125rem solid transparent;
+    animation: pop-up 0.3s linear;
 }
 
-.modal__container::backdrop {
-    background-color: var(  --color-grey-1-opacity-5);
+@keyframes pop-up {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
+
+
 
 .modal__title {
     width: 8.1875rem;
@@ -251,6 +263,7 @@
 
         background: #FFFFFF;
         border-radius: .5rem;
+        max-width: 400px;
     }
 
     .div__entry-exit {
